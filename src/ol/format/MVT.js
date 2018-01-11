@@ -96,6 +96,7 @@ MVT.pbfReaders_ = {
       };
       var end = pbf.readVarint() + pbf.pos;
       pbf.readFields(MVT.pbfReaders_.layer, layer, end);
+      layer.extent = layer.extent || 4096;
       layer.length = layer.features.length;
       if (layer.length) {
         layers[layer.name] = layer;
